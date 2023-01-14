@@ -12,7 +12,12 @@ class MenuRowData {
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  List<MenuRowData> menuRow = [
+  List<MenuRowData> menuRowFirst = [
+    MenuRowData(Icons.add_box, 'Избранное'),
+    MenuRowData(Icons.call, 'Недавные звонки'),
+    MenuRowData(Icons.computer, 'Устройство'),
+  ];
+  List<MenuRowData> menuRowSecond = [
     MenuRowData(Icons.add_box, 'Избранное'),
     MenuRowData(Icons.call, 'Недавные звонки'),
     MenuRowData(Icons.computer, 'Устройство'),
@@ -34,7 +39,9 @@ class MyApp extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  _MenuWidget(menuRow: menuRow),
+                  _MenuWidget(menuRow: menuRowFirst),
+                  const SizedBox(height: 30),
+                  _MenuWidget(menuRow: menuRowSecond),
                 ],
               ),
             )));
